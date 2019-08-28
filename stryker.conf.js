@@ -6,6 +6,9 @@ module.exports = function(config) {
     testRunner: "mocha",
     transpilers: [],
     testFramework: "mocha",
-    coverageAnalysis: "perTest"
+    coverageAnalysis: "perTest",
+    mochaOptions:{files:"test/*.test.js"},
+    mutate:["Car.js","Frog.js","Log.js","Surface.js","HorizontalMovingSurface.js"]
+
   });
 };
