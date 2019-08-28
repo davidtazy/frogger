@@ -1,0 +1,27 @@
+{
+  "name": "myfirstproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "mocha-data-driven": "^1.0.1",
+    "nyc": "^14.1.1"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "^2.0.2",
+    "@stryker-mutator/html-reporter": "^2.0.2",
+    "@stryker-mutator/javascript-mutator": "^2.0.2",
+    "@stryker-mutator/mocha-framework": "^2.0.2",
+    "@stryker-mutator/mocha-runner": "^2.0.2"
+  }
+}
