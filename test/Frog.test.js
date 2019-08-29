@@ -9,6 +9,7 @@ const Surface = require('../src/Surface');
 const Car = require('../src/Car');
 const Log = require('../src/Log');
 const Frog = require('../src/Frog');
+const Water = require('../src/Water');
 
 describe('frog and other surface',() =>{
     it('should attach to logs if intersects',(done)=>{
@@ -31,9 +32,30 @@ describe('frog and other surface',() =>{
         done();
     });
 
-    xit('should drawn on water',(done)=>{
+    it('should drawn on water ',(done)=>{
+        const frog = new Frog(1,1);
+        const water = new Water(1,1,1,1);
+
+        assert.isTrue(water.interact(frog));
+        assert.isTrue(frog.isGameOver(1,1));
+        
+        done();
 
 
+    });
+
+    it('should not interact if not intersecting',(done)=>{
+        const frog = new Frog(3,1);
+        const water = new Water(1,1,1,1);
+        const car = new Car(1,1,1);
+        const log = new Log(1,0,3,1);
+
+        assert.isFalse(water.interact(frog));
+        assert.isFalse(water.interact(frog));
+        assert.isFalse(car.interact(frog));
+        assert.isFalse(log.interact(frog));
+
+        done()
 
     });
 });

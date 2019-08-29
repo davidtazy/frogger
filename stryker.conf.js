@@ -8,7 +8,7 @@ module.exports = function(config) {
     testFramework: "mocha",
     coverageAnalysis: "perTest",
     mochaOptions:{files:"test/*.test.js"},
-    mutate:["Car.js","Frog.js","Log.js","Surface.js","HorizontalMovingSurface.js"]
+    mutate:["src/Car.js","src/Frog.js","src/Log.js","src/Surface.js","src/HorizontalMovingSurface.js"]
 
   });
 };
