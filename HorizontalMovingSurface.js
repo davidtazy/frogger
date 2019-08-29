@@ -19,6 +19,10 @@ class HorizontalMovingSurface extends Surface {
             this.col = nb_col
         }
     }
+
+    isAttachable(){
+        return typeof this.attachable === 'function'
+    }
 }
 
 
