@@ -5,9 +5,9 @@ const should = require('chai').should()
 const assert = require('chai').assert;
 const data_driven = require('mocha-data-driven')
 
-const Surface = require('../Surface');
-const Car = require('../Car');
-const HorizontalMovingSurface = require('../HorizontalMovingSurface');
+const Surface = require('../src/Surface');
+const Car = require('../src/Car');
+const HorizontalMovingSurface = require('../src/HorizontalMovingSurface');
 
 describe('car', () => {
     it('should be an horizontal moving surface', (done) => {

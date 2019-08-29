@@ -5,10 +5,10 @@ const should = require('chai').should()
 const assert = require('chai').assert;
 const data_driven = require('mocha-data-driven')
 
-const Surface = require('../Surface');
-const Car = require('../Car');
-const Log = require('../Log');
-const Frog = require('../Frog');
+const Surface = require('../src/Surface');
+const Car = require('../src/Car');
+const Log = require('../src/Log');
+const Frog = require('../src/Frog');
 
 describe('frog and other surface',() =>{
     it('should attach to logs if intersects',(done)=>{
