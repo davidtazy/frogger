@@ -29,6 +29,4 @@ class Surface {
     }
 }
 
-if ((typeof process !== 'undefined') && (process.release.name === 'node')) {
-    module.exports = Surface
-}
+module.exports = Surface

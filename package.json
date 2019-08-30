@@ -11,17 +11,24 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0",
-    "mocha-data-driven": "^1.0.1",
-    "nyc": "^14.1.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@stryker-mutator/core": "^2.0.2",
     "@stryker-mutator/html-reporter": "^2.0.2",
     "@stryker-mutator/javascript-mutator": "^2.0.2",
     "@stryker-mutator/mocha-framework": "^2.0.2",
-    "@stryker-mutator/mocha-runner": "^2.0.2"
+    "@stryker-mutator/mocha-runner": "^2.0.2",
+    "chai": "^4.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "grunt": "^1.0.4",
+    "grunt-browserify": "^5.3.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-mocha-test": "^0.13.3",
+    "mocha": "^6.2.0",
+    "mocha-data-driven": "^1.0.1",
+    "nyc": "^14.1.1"
   }
 }

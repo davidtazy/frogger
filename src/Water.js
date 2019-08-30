@@ -1,6 +1,5 @@
-if ((typeof process !== 'undefined') && (process.release.name === 'node')) {
-    var HorizontalMovingSurface = require('./HorizontalMovingSurface')
-}
+const HorizontalMovingSurface = require('./HorizontalMovingSurface')
+
 
 
 class Water extends HorizontalMovingSurface {
@@ -12,7 +11,7 @@ class Water extends HorizontalMovingSurface {
 
     interact(frog) {
         //frog fully in water
-        if (this.collide(frog)  && this.left()<= frog.left() && this.right() >= frog.right()) {
+        if (this.collide(frog) && this.left() <= frog.left() && this.right() >= frog.right()) {
             frog.col = -1
             return true;
         }
@@ -24,6 +23,4 @@ class Water extends HorizontalMovingSurface {
 
 
 
-if ((typeof process !== 'undefined') && (process.release.name === 'node')) {
-    module.exports = Water
-}
+module.exports = Water
