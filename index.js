@@ -20,9 +20,13 @@ function handleRequest(req, res) {
   if (pathname == '/') {
     pathname = '/index.html';
   }
+  var ext = path.extname(pathname);
+  if(pathname.startsWith('/src/') && ext ==""){
+    pathname += ".js"
+  }
   
   // Ok what's our file extension
-  var ext = path.extname(pathname);
+  ext = path.extname(pathname);
 
   // Map extension to file type
   var typeExt = {

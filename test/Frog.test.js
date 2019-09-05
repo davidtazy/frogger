@@ -5,11 +5,11 @@ const should = require('chai').should()
 const assert = require('chai').assert;
 const data_driven = require('mocha-data-driven')
 
-const Surface = require('../src/Surface');
-const Car = require('../src/Car');
-const Log = require('../src/Log');
-const Frog = require('../src/Frog');
-const Water = require('../src/Water');
+import  Surface from '../src/Surface';
+import  Car from '../src/Car';
+import  Log from '../src/Log';
+import  Frog from '../src/Frog';
+import  Water from '../src/Water';
 
 describe('frog and other surface',() =>{
     it('should attach to logs if intersects',(done)=>{
@@ -17,7 +17,7 @@ describe('frog and other surface',() =>{
         const log = new Log(1,0,3,1);
 
         assert.isTrue(log.interact(frog));
-        assert.isTrue(frog.xspeed === log.xspeed);
+        assert.isTrue(frog.on_log === log);
 
         done();
     });
@@ -34,7 +34,7 @@ describe('frog and other surface',() =>{
 
     it('should drawn on water ',(done)=>{
         const frog = new Frog(1,1);
-        const water = new Water(1,1,1,1);
+        const water = new Water(1,5);
 
         assert.isTrue(water.interact(frog));
         assert.isTrue(frog.isGameOver(1,1));

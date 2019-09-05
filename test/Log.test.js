@@ -5,10 +5,10 @@ const should = require('chai').should()
 const assert = require('chai').assert;
 const data_driven = require('mocha-data-driven')
 
-const Surface = require('../src/Surface');
-const Car = require('../src/Car');
-const Frog = require('../src/Frog');
-const Log = require('../src/Log');
+import Surface from '../src/Surface';
+import Car from '../src/Car';
+import Frog from '../src/Frog';
+import Log from '../src/Log';
 
 describe('log', () => {
     it('should be attachable', (done) => {

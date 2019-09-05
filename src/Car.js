@@ -1,19 +1,20 @@
 
-const HorizontalMovingSurface = require('./HorizontalMovingSurface');
+import HorizontalMovingSurface from './HorizontalMovingSurface';
 
 
 class Car extends HorizontalMovingSurface {
   constructor(row, col, xspeed) {
     super(row, col, 1, xspeed, 0);
+    this.color = 'red';
   }
 
   interact(frog) {
     if (this.collide(frog)) {
-      frog.col = -frog.col;
+      frog.col = -1;
       return true;
     }
     return false;
   }
 }
 
-module.exports = Car;
+export default Car;

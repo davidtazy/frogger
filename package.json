@@ -7,11 +7,16 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/mocha/bin/mocha --require @babel/register",
+    "cov_txt": "nyc   node_modules/mocha/bin/mocha --require @babel/register",
+    "cov_htm": "nyc --reporter=html  node_modules/mocha/bin/mocha --require @babel/register"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "chai-json-equal": "0.0.1",
+    "sinon": "^7.4.2"
+  },
   "devDependencies": {
     "@stryker-mutator/core": "^2.0.2",
     "@stryker-mutator/html-reporter": "^2.0.2",
@@ -29,6 +34,9 @@
     "grunt-mocha-test": "^0.13.3",
     "mocha": "^6.2.0",
     "mocha-data-driven": "^1.0.1",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5"
   }
 }
