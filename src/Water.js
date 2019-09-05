@@ -28,7 +28,7 @@ class Water extends HorizontalMovingSurface {
 
         //frog fully in water
         if (this.collide(frog) && this.left() <= frog.left() && this.right() >= frog.right()) {
-            frog.col = -1;
+            frog.col = -10;
             return true;
         }
         return false;

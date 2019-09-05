@@ -1,5 +1,3 @@
-//import * as p5 from '../lib/p5.min.js';
-
 import Game from './Game';
 import Renderer from './Renderer';
 import Inputs from './Inputs';
@@ -12,10 +10,6 @@ let s = (p5js) => {
         console.log('setup');
 
         inputs = new Inputs(p5js);
-        // inputs.register_key_events((key)=>{
-        //     console.log('key event',key.isLeft(),key.isRight());
-        // });
-
         game = new Game(10,10,1);
         game.setInputs(inputs);
         renderer = new Renderer(p5js,game);

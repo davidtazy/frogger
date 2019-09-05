@@ -10,7 +10,7 @@ class Car extends HorizontalMovingSurface {
 
   interact(frog) {
     if (this.collide(frog)) {
-      frog.col = -1;
+      frog.col = -10;
       return true;
     }
     return false;

@@ -3,6 +3,7 @@ import Car from './Car';
 import Log from './Log';
 import Frog from './Frog';
 import Water from './Water';
+import Surface from './Surface';
 
 export default class Game {
   constructor(nb_row, nb_col, level) {
@@ -17,23 +18,42 @@ export default class Game {
 
     this.elements = [];
 
-    // create
+    // create cars
     this.elements.push(new Car(this.stage(2), 0, 0.05));
-    this.elements.push(new Car(this.stage(3), 5, 0.05));
+    this.elements.push(new Car(this.stage(3), 5, -0.05));
+    this.elements.push(new Car(this.stage(4), 0, 0.05));
+    this.elements.push(new Car(this.stage(5), 7, -0.05));
    
+    let pavement = new Surface(this.stage(6),0,this.nb_col,0,0);
+    pavement.color = 'grey';
+    this.elements.push(pavement);
 
-    let water_line = new Water(this.stage(5), this.nb_col);
-    let log = new Log(this.stage(5), 0, 3, 0.05);
+    this.create_water_line(7);
+   
+    this.create_water_line(8);
+
+    this.create_water_line(9);
+   
+  }
+
+  random_speed(max){
+    let val = Math.random()*max;
+    const sign = (Math.random() > 0.5) ? 1:-1; 
+    return sign * val;
+  }
+
+  random_width(max){
+   return Math.max(1,Math.floor(Math.random()*max));
+  }
+
+
+
+  create_water_line(lvl){
+    let water_line = new Water(this.stage(lvl), this.nb_col);
+    let log = new Log(this.stage(lvl), 0, this.random_width(4), this.random_speed(0.08));
     water_line.addLog(log);
     this.elements.push(water_line);
     this.elements.push(log);
-   
-    water_line = new Water(this.stage(4), this.nb_col);
-    log = new Log(this.stage(4), 0, 3, -0.05);
-    water_line.addLog(log);
-    this.elements.push(water_line);
-    this.elements.push(log);
-   
   }
 
   stage(st) {

@@ -69,6 +69,10 @@ export default class Renderer {
         if(surf.color == 'red'){
             p.fill(255,0,0);
         }
+
+        if(surf.color == 'grey'){
+            p.fill(200,200,200);
+        }
     }
 
     drawSurface(p, surf) {

@@ -28,6 +28,10 @@ class Surface {
         this.col += this.xspeed;
         this.row += this.yspeed;
     }
+
+    interact(){
+        return false;
+    }
 }
 
 export default  Surface;
