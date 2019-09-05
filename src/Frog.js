@@ -32,6 +32,7 @@ class Frog extends Surface {
 
   update(nb_col){
     this.xspeed = 0;
+    // attach to log if on
     if(this.on_log){
       this.xspeed = this.on_log.xspeed;
     }

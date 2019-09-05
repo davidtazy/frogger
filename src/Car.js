@@ -8,6 +8,7 @@ class Car extends HorizontalMovingSurface {
     this.color = 'red';
   }
 
+  //game over is frog collid frog
   interact(frog) {
     if (this.collide(frog)) {
       frog.col = -10;

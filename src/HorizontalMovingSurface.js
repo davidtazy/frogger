@@ -10,22 +10,22 @@ class HorizontalMovingSurface extends Surface {
   update(nb_col) {
     
     if( ! Number.isInteger(nb_col)){
-      
-      throw new Error('HorizontalMovingSurface.update no parameter nb_col');
+        throw new Error('HorizontalMovingSurface.update no parameter nb_col');
     }
+
     super.update();
+
+    // overlap right to left
     if (this.xspeed > 0 && this.left() > nb_col) {
       this.col = -this.w;
     }
 
+    // overlap left to right
     if (this.xspeed < 0 && this.right() < 0) {
       this.col = nb_col;
     }
   }
 
-  isAttachable() {
-    return typeof this.attachable === 'function';
-  }
 }
 
 

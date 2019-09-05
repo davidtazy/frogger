@@ -13,13 +13,13 @@ import Log from '../src/Log';
 describe('log', () => {
     it('should be attachable', (done) => {
         const log = new Log(1, 1,3);
-        assert.isFunction(log.attachable)
+        const frog = new Frog(1,1);
 
-        assert.isTrue(typeof log.attachable === 'function')
+        assert.isTrue(log.interact(frog));
+        assert.isFalse(frog.isGameOver(2,2));
+        assert.deepStrictEqual(frog.on_log,log);
 
-        assert.isTrue(log.isAttachable())
-
-        done()
+        done();
     });
     
 

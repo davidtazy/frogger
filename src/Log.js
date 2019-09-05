@@ -11,16 +11,18 @@ class Log extends HorizontalMovingSurface {
   interact(frog) {
  
     if (this.collide(frog)) {
+      //attach frog
       frog.on_log = this;
       return true;
+
     }else if (frog.on_log == this){
+      //detach frog
       frog.on_log = null;
       return false;
     }
     return false;
   }
 
-  attachable() { }
 }
 
 

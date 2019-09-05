@@ -17,6 +17,10 @@ export default class Inputs{
         };
     }
 
+    register_key_events(callback){
+        this.callback = callback;
+    }
+
     isLeft(){
         return this.p5js.LEFT_ARROW === this.p5js.keyCode;
     }
@@ -31,10 +35,4 @@ export default class Inputs{
     isDown(){
         return this.p5js.DOWN_ARROW === this.p5js.keyCode;  
     }
-
-    register_key_events(callback){
-        this.callback = callback;
-    }
-
-
 }

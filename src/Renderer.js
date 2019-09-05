@@ -18,15 +18,29 @@ export default class Renderer {
 
         this.game.update();
 
-        const p = this.p5js;
+        this.game.getSurfaces().map((surf) => this.drawSurface(this.p5js, surf));
 
-        this.game.getSurfaces().map((surf) => {
+        this.drawSurface(this.p5js, this.game.frog);
 
-            this.drawSurface(p, surf);
-        });
+    }
 
-        this.drawSurface(p, this.game.frog);
+    
 
+    drawSurface(p, surf) {
+        const r = this.toCanvas(surf);
+        this.fillColor(p,surf);
+        p.rect(r.x, r.y, r.width, r.height);
+    }
+
+    //transform row col coordinates to canvas coordinates
+    toCanvas(surf) {
+        
+        return {
+            x: this.colToX(surf.col),
+            y: this.rowToY(surf.row),
+            width: this.lenToWidth(surf.w),
+            height: this.unitHeight()
+        };
     }
 
     colToX(col) {
@@ -45,18 +59,7 @@ export default class Renderer {
         return this.height / this.nb_row;
     }
 
-
-    toCanvas(surf) {
-        
-        return {
-            x: this.colToX(surf.col),
-            y: this.rowToY(surf.row),
-            width: this.lenToWidth(surf.w),
-            height: this.unitHeight()
-        };
-    }
-
-    fill(p,surf){
+    fillColor(p,surf){
         if(surf.color == 'green'){
             p.fill(0,255,0);
         }
@@ -73,11 +76,5 @@ export default class Renderer {
         if(surf.color == 'grey'){
             p.fill(200,200,200);
         }
-    }
-
-    drawSurface(p, surf) {
-        const r = this.toCanvas(surf);
-        this.fill(p,surf);
-        p.rect(r.x, r.y, r.width, r.height);
     }
 }
