@@ -18,13 +18,13 @@
     "sinon": "^7.4.2"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^2.0.2",
+    "@stryker-mutator/core": "^9.6.1",
     "@stryker-mutator/html-reporter": "^2.0.2",
     "@stryker-mutator/javascript-mutator": "^2.0.2",
     "@stryker-mutator/mocha-framework": "^2.0.2",
     "@stryker-mutator/mocha-runner": "^2.0.2",
     "chai": "^4.2.0",
-    "eslint": "^6.3.0",
+    "eslint": "^10.4.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "mocha": "^6.2.0",
